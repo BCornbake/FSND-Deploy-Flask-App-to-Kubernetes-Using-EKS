@@ -21,7 +21,6 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
         - pip install pytest
         - pip install jwt
-        - pip install json
         - pip install flask
         - python test_main.py
   build:
