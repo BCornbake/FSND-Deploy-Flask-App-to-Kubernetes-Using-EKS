@@ -24,6 +24,7 @@ def client():
 
 def test_health(client):
     response = client.get('/')
+    assert False
     assert response.status_code == 200
     assert response.json == 'Healthy'
 
@@ -38,3 +39,7 @@ def test_auth(client):
     assert response.status_code == 200
     token = response.json['token']
     assert token is not None
+
+
+if __name__=="__main__":
+        pytest.main()
