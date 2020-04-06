@@ -19,10 +19,10 @@ phases:
         - sed -i 's@CONTAINER_IMAGE@'"$REPOSITORY_URI:$TAG"'@' simple_jwt_api.yml
         - $(aws ecr get-login --no-include-email)
         - export KUBECONFIG=$HOME/.kube/config
-        - pip install pytest
-        - pip install jwt
-        - pip install flask
-        - python test_main.py
+        - pip3 install pytest
+        - pip3 install jwt
+        - pip3 install flask
+        - python3 test_main.py
   build:
     commands:
       - docker build --tag $REPOSITORY_URI:$TAG .
